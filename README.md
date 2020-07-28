@@ -21,7 +21,7 @@ The goal is to have source breaking changes on minor changes until a major versi
 
 ## Using this Package
 
-Each test suite has a protocol requirements that when implimented will have the appropriate suite of tests run. If there are multiple test suites then functions prefixed with `testSuite` are the ones that determine which tests are run. If no functions have the `testSuite` prefix then all tests are run based on values returned by the protocol requirements.
+Each test suite has a protocol requirements that when implimented will have the appropriate suite of tests run. If there are multiple test suites then functions prefixed with `protocolTestSuite` are the ones that determine which tests are run. If no functions have the `protocolTestSuite` prefix then all tests are run based on values returned by the protocol requirements.
 
 Once you have implimented the functions and any support properties needed for the tests you will need to create a test in your `XCTestCase` type that calls the "Started by" function that is with the associated protocol.
 
@@ -40,17 +40,17 @@ final class ExampleCollectionTests: XCTestCase, CollectionTests {
     typealias Element = Int
     
     // This starts the `CollectionTests` test suite.
-    func testCollectionProtocol() throws {
+    func testRunCollectionProtocol() throws {
         try runCollectionTests()
     }
 
     // This is a enables the empty collection test suite of `CollectionTests`.
-    func createEmptyCollection() -> [Int]? {
+    func protocolTestSuiteEmptyCollection() -> [Int]? {
         []
     }
     
     // This enables the populated collection test suite of `CollectionTests`.
-    func createPopulatedCollection() -> [Int]? {
+    func protocolTestSuitePopulatedCollection() -> [Int]? {
         [1, 2, 3, 4, 5]
     }
 }
