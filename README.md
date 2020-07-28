@@ -12,7 +12,7 @@ This package is all about making that as easy as possible by providing some basi
 let package = Package(
     ...
     dependencies: [
-        .package(url: "https://github.com/bscothern/ProtocolTests.git", .upToNextMinor(from: "0.1.0"))
+        .package(url: "https://github.com/bscothern/ProtocolTests.git", .upToNextMinor(from: "0.2.0"))
     ],
     ...
 )

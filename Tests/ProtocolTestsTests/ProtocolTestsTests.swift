@@ -9,11 +9,11 @@ final class ProtocolTestsTests: XCTestCase, CollectionTests {
         try runCollectionTests()
     }
 
-    func testSuiteEmptyCollection() -> [Int]? {
+    func protocolTestSuiteEmptyCollection() -> [Int]? {
         []
     }
     
-    func testSuitePopulatedCollection() -> [Int]? {
+    func protocolTestSuitePopulatedCollection() -> [Int]? {
         [1, 2, 3, 4, 5]
     }
 }
