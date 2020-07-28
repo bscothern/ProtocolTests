@@ -5,12 +5,12 @@ public protocol CollectionTests: XCTestCase {
     associatedtype Element: Equatable
 
     /// Create a `Collection` where `isEmpty` returns `true`.
-    func createEmptyCollection() -> CollectionType?
+    func testSuiteEmptyCollection() -> CollectionType?
 
     /// Create a `Collection` with at least 1 `Element` if you want to test this behavior.
     ///
     /// - Note: This will iterate over your entire collection multiple times and make copy of elements, so if it is very large it may take a while.
-    func createPopulatedCollection() -> CollectionType?
+    func testSuitePopulatedCollection() -> CollectionType?
 }
 
 public enum CollectionTestsError: Error {
@@ -18,11 +18,11 @@ public enum CollectionTestsError: Error {
 }
 
 extension CollectionTests {
-    public func createEmptyCollection() -> CollectionType? {
+    public func testSuiteEmptyCollection() -> CollectionType? {
         nil
     }
 
-    public func createPopulatedCollection() -> CollectionType? {
+    public func testSuitePopulatedCollection() -> CollectionType? {
         nil
     }
 }
@@ -36,7 +36,7 @@ extension CollectionTests {
 
 extension CollectionTests {
     func emptyCollectionTests() throws {
-        guard let collection = createEmptyCollection() else { return }
+        guard let collection = testSuiteEmptyCollection() else { return }
         XCTAssert(collection.isEmpty, "Empty Collection Tests require that you provide an empty collection")
         
         // MARK: Ensure indices are working correctly
@@ -46,7 +46,7 @@ extension CollectionTests {
 
 extension CollectionTests {
     func populatedCollectionTests() throws {
-        guard let collection = createPopulatedCollection() else { return }
+        guard let collection = testSuitePopulatedCollection() else { return }
         XCTAssertFalse(collection.isEmpty, "Populated Collection Tests require that you provide a non-empty collection")
         
         // MARK: Ensure indices are working correctly
