@@ -12,11 +12,13 @@ This package is all about making that as easy as possible by providing some basi
 let package = Package(
     ...
     dependencies: [
-        .package(url: "https://github.com/bscothern/ProtocolTests.git", from: "0.1.0")
+        .package(url: "https://github.com/bscothern/ProtocolTests.git", .upToNextMinor(from: "0.1.0"))
     ],
     ...
 )
 ```
+The goal is to have source breaking changes on minor changes until a major version is released.
+
 ## Using this Package
 
 Each test suite has a protocol requirements that when implimented will have the appropriate suite of tests run. If there are multiple test suites then functions prefixed with `testSuite` are the ones that determine which tests are run. If no functions have the `testSuite` prefix then all tests are run based on values returned by the protocol requirements.
