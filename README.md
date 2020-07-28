@@ -1,5 +1,5 @@
 # ProtocolTests
-*A Swift package to help verify and test protocol conformances and ensure they are correct.*
+*A Swift package to help verify protocol conformances are correct.*
 
 Protocols are a fundamental building block of scalable Swift code.
 Part of the challenge of working with them is making sure that your conformances to the standard library protocols is correct.
