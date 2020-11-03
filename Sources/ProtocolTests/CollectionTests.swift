@@ -41,6 +41,8 @@ extension CollectionTests {
         
         // MARK: Ensure indices are working correctly
         XCTAssertEqual(collection.startIndex, collection.endIndex, "Collection requires that startIndex == endIndex when empty")
+        
+        XCTAssertEqual(collection.distance(from: collection.startIndex, to: collection.endIndex), collection.count, "Collection requires that distance(from:to:) returns the count when you go from a start index to the end indext")
     }
 }
 
@@ -70,6 +72,8 @@ extension CollectionTests {
             let value = collection[i]
             XCTAssertEqual(value, values.removeLast(), "Collection requies that an index remains valid and returns the same element if it is not mutated.")
         }
+        
+        XCTAssertEqual(collection.distance(from: collection.startIndex, to: collection.endIndex), collection.count, "Collection requires that distance(from:to:) returns the count when you go from a start index to the end indext")
         
         // MARK: Test Slicing
         
